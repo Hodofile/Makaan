@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  color: white;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>My First CSS Example</h1>
+<p>Data</p>
+<% for(let k of d) { %>
+  <p><%=k.title %></p>
+  <p><%=k.price %></p>
+  <p><a href="/data/<%=k.id %>">See detail</a></p>
+  <br />
+  <br />
+  <% } %>
+</body>
+</html>
+
+

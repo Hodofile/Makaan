@@ -1,0 +1,112 @@
+<%- include('header.ejs') %> 
+<%- include('sidebar.ejs') %>
+
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="page-head-line">Agent Info</h1>
+        <h1 class="page-subhead-line">Agent property here</h1>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <div class="row">
+      <div class="col-md-12">
+
+
+        
+          <div class="panel panel-default">
+           <div class="panel-heading">
+             Agents Details
+           </div>
+           <div class="panel-body">
+      
+       <div class="form-group">
+         
+           <div class="">
+             
+           </div>
+       </div>
+    
+       <div class="form-group">
+           <label class="control-label col-lg-4">Agent Pic</label>
+          <img class="img-thumbnail" width="15%" src="/images/<%= sdata.ad[0].img%>" /> 
+       </div>
+
+       <div class="form-group">
+        <label class="control-label col-lg-4">Agent Name</label>
+        <p> <%= sdata.ad[0].name%></p> 
+    </div>
+
+
+
+  <div class="form-group">
+    <label class="control-label col-lg-4">Agent Desgination</label>
+    <p> <%= sdata.ad[0].desi%></p> 
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4">Agent Facebook</label>
+  <p> <%= sdata.ad[0].fb%></p> 
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4">Agent Instagram</label>
+  <p> <%= sdata.ad[0].insta%></p> 
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4">Agent Tweeter</label>
+  <p> <%= sdata.ad[0].tweet%></p> 
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-4">Agent Email</label>
+  <p> <%= sdata.ad[0].aemail%></p> 
+</div>
+
+
+<div class="form-group">
+  <label class="control-label col-lg-4">Agent Role</label>
+  <p> <%= sdata.ad[0].role%></p> 
+</div>
+       <!-- <div class="alert alert-warning"><strong>Notice!</strong> Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead.</div> -->
+       </div>
+              </div>
+           
+           </div>
+        <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><h1>Project associated with <%= sdata.ad[0].name%></h1></div>
+          <div class="panel-body">
+            
+
+            <div id="port-folio">
+              <div class="row">
+                
+                <% for(let k of sdata.ap) { %>
+                <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="/images/<%= k.image %>" class="img-responsive" />
+                    <div class="caption">
+                <a href="/single/<%=k._id%>" <h1 class="text-center"><%=k.pname%></h1></a>
+                </div>
+                </div>
+                </div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
+
+<%- include('footer.ejs') %>

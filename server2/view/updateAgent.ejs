@@ -1,0 +1,91 @@
+<%- include('header.ejs') %>
+<%- include('sidebar.ejs') %>
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+                <h1 class="page-head-line">Update Agent Here</h1>
+               <h1 class="page-subhead-line">Makaan property here</h1>
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Update Form
+                    </div>
+                    <div class="panel-body">
+                    
+                        <form action="/updateAgent/<%=sdata[0]._id%>" role="form" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Agent Name</label>
+                                <input value="<%=sdata[0].name%>" name="name" class="form-control" type="text">
+                                <p class="help-block">Help text here.</p>
+                            </div>
+                     <div class="form-group">
+                                <label>Desgination</label>
+                                <input value="<%=sdata[0].desi%>" name="desi" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Facebook</label>
+                                <input value="<%=sdata[0].fb%>" name="fb" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Twitter</label>
+                                <input value="<%=sdata[0].tweet%>" name="tweet" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Instagram</label>
+                                <input value="<%=sdata[0].insta%>" name="insta" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input value="<%=sdata[0].aemail%>" name="aemail" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select class="form-control" name="role" >
+                                    <option value="">Select</option>
+                                    <option value="" name="role">Owner</option>
+                                    <option value="" name="role">Agent</option>
+                                   
+                                </select>
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Update Image</label>
+                                <input type="hidden" name="aimg" value="<%=sdata[0].img%>">
+                                <input  name="img" class="form-control" type="file">
+                         <p class="help-block"><img src="/images/<%=sdata[0].img%>" width="10%"></p>
+                            </div>
+                        <button type="submit" class="btn btn-info">Update Agent </button>
+
+                        </form>
+                        <a href="/show_agents">View Record</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
+<%- include('footer.ejs') %>

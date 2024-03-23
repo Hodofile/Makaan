@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update db</title>
+</head>
+<body>
+
+    <h1>Update Student</h1>
+    <form action="/updateStudent/<%=sdata[0]._id%>" method="post">
+        <p>Name</p>
+        <input type="text" name="name" value="<%=sdata[0].name%>">
+        <p>Age</p>
+        <input type="text" name="age" value=" <%=sdata[0].age%>">
+        <p>City</p>
+        <input type="text" name="city" value="<%=sdata[0].city%>">
+        <input type="submit" value="Save">
+    </form>
+    <a href="/viewdb">View Record</a>
+</body>
+</html>

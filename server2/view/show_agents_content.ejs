@@ -1,0 +1,83 @@
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">All Agents</h1>
+                <% if(agentdata.msg=='delete_agent') { %>
+                    <h1 class="page-subhead-line">Agent Deleted Successfully!</h1>
+                    <% } else { %>
+                    <h1 class="page-subhead-line"></h1>
+                    <% } %>
+
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Properties List
+                    </div>
+                    <div class="panel-body">
+                    
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                   
+                                    <th>Agent Name</th>
+                                    <th>Agent Pic</th>
+                                    <th>View</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <% for(let k of agentdata.sdata) { %>
+                            <tbody>
+                                <tr>
+                                    <td><%=k.name%></td>
+                                    <td><img width="20%" src="/images/<%=k.img%>" /></td>
+                                    <td><a href="/AgentS/<%=k._id%>">View</a></td>
+                                    <td><a href="/updateA/<%=k._id%>">Update</a></td>
+                                    <td><button onclick="deleteRecord('<%=k._id%>')">Delete</button></td>
+                                </tr>
+                               
+                            </tbody>
+                            <% } %>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
+<script>
+    const putMethod={
+        method:'delete',
+        headers:{
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+    
+   }
+
+   function deleteRecord(n){
+   
+   fetch(`/ag_delete/${n}`, putMethod)
+   .then((data)=>{
+    window.location.href="/show_agents?success=delete_agent"
+    console.log(data)
+   })
+   .catch(err => console.log(err))
+   }
+       
+    
+</script>

@@ -1,0 +1,96 @@
+<%- include('header.ejs') %>
+<%- include('sidebar.ejs') %>
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+                <h1 class="page-head-line">Update Property Here</h1>
+               <h1 class="page-subhead-line">Makaan property here</h1>
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Update Form
+                    </div>
+                    <div class="panel-body">
+                    
+                        <form action="/updateProperty/<%=sdata[0]._id%>" role="form" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Property Name</label>
+                                <input value="<%=sdata[0].pname%>" name="pname" class="form-control" type="text">
+                                <p class="help-block">Help text here.</p>
+                            </div>
+                     <div class="form-group">
+                                <label>Property Price</label>
+                                <input value="<%=sdata[0].pprice%>" name="pprice" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Property Address</label>
+                                <input value="<%=sdata[0].paddress%>" name="paddress" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Size</label>
+                                <input value="<%=sdata[0].psize%>" name="psize" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Bedroom</label>
+                                <input value="<%=sdata[0].pbed%>" name="pbed" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Kitchen</label>
+                                <input value="<%=sdata[0].pkit%>" name="pkit" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Bathroom</label>
+                                <input value="<%=sdata[0].pbath%>" name="pbath" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <label>Update Image</label>
+                               <input type="hidden" name="pimg" value="<%=sdata[0].image%>">
+                                <input  name="image" class="form-control" type="file">
+                         <p class="help-block"><img src="/images/<%=sdata[0].image%>" width="10%"></p>
+
+                         
+                         
+                         <div class="form-group">
+                                <label>Property Description</label>
+                                <textarea name="pdesc" class="form-control" rows="3"><%=sdata[0].pdesc%></textarea>
+                            </div>
+
+                        </div>
+                        
+                        <button type="submit" class="btn btn-info">Update Property </button>
+
+                        </form>
+                        <a href="/show_properties">View Record</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
+<%- include('footer.ejs') %>

@@ -1,0 +1,88 @@
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">All Testimonial</h1>
+                <% if(testidata.msg=='delete_testimonial') { %>
+                    <h1 class="page-subhead-line">Testimonial Deleted Successfully!</h1>
+                    <% } else { %>
+                    <h1 class="page-subhead-line"></h1>
+                    <% } %>
+                    <% if(testidata.msg=='update') { %>
+                        <h1 class="page-subhead-line">Testimonial updated Successfully!</h1>
+                    <% } %>
+
+                    
+
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Testimonial List
+                    </div>
+                    <div class="panel-body">
+                    
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                   
+                                    <th>Client Name</th>
+                                    <th>Client Img</th>
+                                    <th>View</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <% for(let k of testidata.sdata) { %>
+                            <tbody>
+                                <tr>
+                                    <td><%=k.clientname%></td>
+                                    <td><img width="20%" src="/images/<%=k.clientimage%>" /></td>
+                                    <td><a href="/TestimonialS/<%=k._id%>">View</a></td>
+                                    <td><a href="/updateTest/<%=k._id%>">Update</a></td>
+                                    <td><button onclick="deleteRecord('<%=k._id%>')">Delete</button></td>
+                                </tr>
+                               
+                            </tbody>
+                            <% } %>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
+<script>
+    const putMethod={
+        method:'delete',
+        headers:{
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+    
+   }
+
+   function deleteRecord(n){
+   
+   fetch(`/deleteTest/${n}`, putMethod)
+   .then((data)=>{
+    window.location.href="/show_testimonial?success=delete_testimonial"
+    console.log(data)
+   })
+   .catch(err => console.log(err))
+   }
+       
+    
+</script>

@@ -1,0 +1,30 @@
+<%- include('header'); -%>
+<br>
+
+<section class="container-fluid">
+  <section class="row justify-content-center">
+    <section class="col-12 col-sm-6 col-md-4">
+      <form action="/logIn" class="form-container">
+        <div class="form-group">
+          <h1 class="text-center mx-auto wow fadeInUp" data-wowdelay="0.1s">LOGIN</h1>
+          <label for="usermail">Username</label>
+          <input type="email" class="form-control" placeholder="Enter mail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" placeholder="password" name="pass" required>
+        </div><br>
+        <button type="submit" class="btn btn-primary btn-block border-0 w-100">Sign in</button>
+        <div class="form-footer">
+          <p>Dont't have any account? <a href="/signup">Sign Up</a></p>
+          <span><a href="/forget_password">Forget password?</a></span>
+        </div>
+      </form>
+    </section>
+  </section>
+
+</section>
+
+<%- include('footer'); -%>
+
+

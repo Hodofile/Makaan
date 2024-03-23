@@ -1,0 +1,44 @@
+<%- include('header.ejs') %>
+<%- include('sidebar.ejs') %>
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+                <h1 class="page-head-line">Update Property Type Here</h1>
+               <h1 class="page-subhead-line">Makaan property here</h1>
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Update  Form
+                    </div>
+                    <div class="panel-body">
+                    
+                        <form action="/updatePropertyType/<%=sdata[0]._id%>" role="form" method="post" >
+                            <div class="form-group">
+                                <label>Property Type</label>
+                                <input value="<%=sdata[0].ptname%>" name="ptname" class="form-control" type="text">
+                                <p class="help-block">Help text here.</p>
+                            </div>
+                              <button type="submit" class="btn btn-info">Update Property Type</button>
+
+                        </form>
+                        
+                        <a href="/show_property_type">View Record</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
+<%- include('footer.ejs') %>

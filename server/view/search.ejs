@@ -1,0 +1,41 @@
+ <!-- Search Start -->
+ <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 30px;">
+    <div class="container">
+        <form action="/property" method="post">
+        <div class="row g-2">
+            <div class="col-md-10">
+                <div class="row g-2">
+                    
+                    <div class="col-md-4">
+                        <input name="title" type="text" class="form-control border-0 py-3" placeholder="Search Keyword">
+                    </div>
+                    <div class="col-md-4">
+                        <select name="cat" class="form-select border-0 py-3">
+                            <option value="" selected>Category Type</option>
+                            <%
+                            let c=0;
+                            for(let mk of p_cat){ %>
+                            <option value="<%=mk._id%>"><%=mk.cname%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select name="pt" class="form-select border-0 py-3">
+                            <option value="" selected>Property Type</option>
+                            <%
+                            for (let mk of p_type){%>
+                            <option value="<%=mk.ptname%>"><%=mk.ptname%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+            <div class="col-md-2">
+                <button class="btn btn-dark border-0 w-100 py-3">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!-- Search End -->

@@ -1,0 +1,139 @@
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">Add Property Here</h1>
+               <% if(success.msg=='success') { %>
+                <h1 class="page-subhead-line">Property Added Successfully!</h1>
+                <% } else { %>
+                <h1 class="page-subhead-line">Makaan property here</h1>
+                <% } %>
+
+            </div>
+
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Property Form
+                    </div>
+                    <div class="panel-body">
+                    
+                        <form action="/addProperty" role="form" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Property Name</label>
+                                <input name="pname" class="form-control" type="text">
+                                <p class="help-block">Help text here.</p>
+                            </div>
+                     <div class="form-group">
+                                <label>Property Price</label>
+                                <input name="pprice" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Property Address</label>
+                                <input name="paddress" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Size</label>
+                                <input name="psize" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Bedroom</label>
+                                <input name="pbed" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Kitchen</label>
+                                <input name="pkit" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Property Bathroom</label>
+                                <input name="pbath" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Select Agent</label>
+                                <select class="form-control" name="agent">
+                                    <option value="">Select</option>
+                                    <% for(let k of success.adata) { %>
+                                    <option value="<%=k._id%>"><%=k.name%></option>
+                                    <% } %>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Select Category</label>
+                                <select class="form-control" name="category" >
+                                    <option value="">Select</option>
+                                    <% for(let ck of success.cdata) {%>
+                                    <option value="<%=ck._id%>"><%=ck.cname%></option>
+                                    <% } %>
+                                </select>
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Select Property Type</label>
+                                <select class="form-control" name="ptType" >
+                                    <option value="">Select</option>
+                                    <% for(let ck of success.ptData) {%>
+                                    <option value="<%=ck._id%>"><%=ck.ptname%></option>
+                                    <% } %>
+                                </select>
+                         <p class="help-block">Help text here.</p>
+                            </div>
+
+                            
+
+                            
+
+
+                            <div class="form-group">
+                                <label>Property Image</label>
+                                <input name="image" class="form-control" type="file">
+                         <p class="help-block">Help text here.</p>
+                                
+                         
+                         <div class="form-group">
+                                <label>Property Description</label>
+                                <textarea name="pdesc" class="form-control" rows="3"></textarea>
+                            </div>
+
+                        </div>
+
+                
+                       
+                      
+                     
+                            <button type="submit" class="btn btn-info">Add Property </button>
+
+                        </form>
+                        <a href="/show_properties">View Record</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>

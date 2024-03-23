@@ -1,0 +1,66 @@
+<%- include('header.ejs') %> 
+<%- include('sidebar.ejs') %>
+
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="page-head-line">Client Info</h1>
+        <h1 class="page-subhead-line">Testimonial property here</h1>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <div class="row">
+      <div class="col-md-12">
+
+
+        
+          <div class="panel panel-default">
+           <div class="panel-heading">
+             Testimonial Details
+           </div>
+           <div class="panel-body">
+      
+       <div class="form-group">
+         
+           <div class="">
+             
+           </div>
+       </div>
+    
+       <div class="form-group">
+           <label class="control-label col-lg-4">Client Image</label>
+          <img class="img-thumbnail" width="15%" src="/images/<%= sdata[0].clientimage%>" /> 
+       </div>
+
+       <div class="form-group">
+        <label class="control-label col-lg-4">Client Name</label>
+        <p> <%= sdata[0].clientname%></p> 
+    </div>
+
+
+
+  <div class="form-group">
+    <label class="control-label col-lg-4">Client Profession</label>
+    <p> <%= sdata[0].clientprof%></p> 
+</div>
+
+       <!-- <div class="alert alert-warning"><strong>Notice!</strong> Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead.</div> -->
+       </div>
+              </div>
+           
+           </div>
+        <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+        
+      </div>
+    </div>
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
+
+<%- include('footer.ejs') %>

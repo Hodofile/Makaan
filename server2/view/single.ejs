@@ -1,0 +1,50 @@
+<%- include('header.ejs') %> 
+<%- include('sidebar.ejs') %> 
+    
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">All Properties</h1>
+                <h1 class="page-subhead-line">Makaan property here</h1>
+
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Properties List
+                    </div>
+                    <div class="panel-body">
+                    
+    <p><b>Property Name :</b> <%= sdata[0].pname%></p>
+    <p><b>Property Address:</b> <%= sdata[0].paddress%></p>
+    <p><b>Property Price</b> <%= sdata[0].pprice%></p>
+    <p><b>Property Size</b><%= sdata[0].psize%></p>
+    <p><b>Property Kitchen</b> <%= sdata[0].pkit%></p>
+    <p><b>Property Bedrooms</b> <%= sdata[0].pbed%></p>
+    <p><b>Property Bathrooms</b> <%= sdata[0].pbath%></p>
+    <p><b>Property Description</b> <%= sdata[0].pdesc%></p>
+    <p><b>Property Image</b> <img src="<%=sdata[0].image%>" alt=""></p>
+    <div id="port-folio">
+       
+        </div>
+      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
+
+<%- include('footer.ejs') %> 

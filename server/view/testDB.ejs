@@ -1,0 +1,14 @@
+<%- include('header.ejs') %>
+
+    <h1>Save Student</h1>
+    <form action="/createStudent" method="post">
+        <p>Name</p>
+        <input type="text" name="name">
+        <p>Age</p>
+        <input type="text" name="age">
+        <p>City</p>
+        <input type="text" name="city">
+        <input type="submit" value="Save">
+    </form>
+    <a href="/viewdb">View Record</a>
+    <%- include('footer.ejs') %>

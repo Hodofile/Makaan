@@ -1,0 +1,72 @@
+<%-include('header.ejs')%>
+<%-include('sidebar.ejs')%>
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">Add Testimonial Here</h1>
+                <h1 class="page-subhead-line">Makaan property here</h1>
+               
+
+            </div>
+
+        </div>
+        <!-- /. ROW  -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="alert alert-info">
+                 form   This is a free responsive admin under cc3.0 license, so you can use it for personal and commercial use.
+                  <br />
+                    Enjoy this admin and for more please keep looking <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+                </div> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Update Form
+                    </div>
+                    <div class="panel-body">
+                    
+                        <form action="/updateTesti/<%=sdata[0]._id%>" role="form" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Client Name</label>
+                                <input value="<%=sdata[0].clientname%>" name="clientname" class="form-control" type="text">
+                                <p class="help-block">Help text here.</p>
+                            </div>
+                     <div class="form-group">
+                                <label>Client Profession</label>
+                                <input value="<%=sdata[0].clientprof%>" name="clientprof" class="form-control" type="text">
+                         <p class="help-block">Help text here.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Client Image</label>
+                                <input type="hidden" name="cimg" value="<%=sdata[0].clientimage%>" >
+                                <input value="<%=sdata[0].clientimage%>" name="clientimage" class="form-control" type="file">
+                                <p class="help-block"><img src="/images/<%=sdata[0].clientimage%>" width="10%"></p>
+                                
+                         
+                         <div class="form-group">
+                                <label>Client Description</label>
+                                <textarea name="clientdesc" class="form-control" rows="3"><%=sdata[0].clientdesc%></textarea>
+                            </div>
+
+                        </div>
+
+                
+                       
+                      
+                     
+                            <button type="submit" class="btn btn-info">Update Testimonial </button>
+
+                        </form>
+                        <a href="/show_testimonial">View Record</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
+<%-include('footer.ejs')%>
